@@ -6,6 +6,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
   flyway:
     enabled: false
@@ -14,6 +15,9 @@ spring:
     port: 5672
     username: wordcloud
     password: wordcloud
+    listener:
+      simple:
+        missing-queues-fatal: false
 
 wordcloud:
   rabbitmq:
